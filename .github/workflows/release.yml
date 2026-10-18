@@ -30,13 +30,7 @@ jobs:
         run: dotnet build Il2CppDumper.sln -c Release --no-restore
 
       - name: Publish
-        run: |
-          dotnet publish ^
-          Il2CppDumper/Il2CppDumper.csproj ^
-          -c Release ^
-          -r win-x64 ^
-          --self-contained false ^
-          -o publish
+        run: dotnet publish Il2CppDumper/Il2CppDumper.csproj -c Release -r win-x64 --self-contained false -o publish
 
       - name: Create ZIP
         shell: pwsh
